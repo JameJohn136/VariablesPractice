@@ -89,10 +89,12 @@ namespace VariablesPractice
             double price = 12.49;
             double paid = 20;
             double taxRate = 0.13;
+            double taxPrice = price * (1 + taxRate) - price;
             double totalPrice = price * (1 + taxRate);
             double change = paid - totalPrice;
 
-            displayLabel.Text = $"Bill of Sale:\nShirt Price: {price}\nTax: {price * (1 + taxRate) - price}\nTotal: {totalPrice}\nTendered: {paid}\nChange: {change}";
+            displayLabel.Text = $"Bill of Sale:\nShirt Price: {price}\nTax: {taxPrice}" +
+                $"\nTotal: {totalPrice}\nTendered: {paid}\nChange: {change}";
         }
     }
 }
